@@ -1,0 +1,45 @@
+﻿@using PersonelTakipSistemi.Models;
+@model List<Employee>;
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_TestLayout.cshtml";
+}
+
+<br />
+<table class="table table-bordered">
+    <tr>
+        <th>Id</th>
+        <th>TC</th>
+        <th>Ad</th>
+        <th>Soyad</th>
+        <th>Doğum Tarihi</th>
+        <th>Doğum Yeri</th>
+        <th>Adres</th>
+        <th>Telefon</th>
+        <th>Öğrenim durumu</th>
+        <th>Departman</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+
+    </tr>
+    @foreach (var x in Model)
+    {
+        <tr>
+            <td>@x.PersonelId</td>
+            <td>@x.TC</td>
+            <td>@x.Ad</td>
+            <td>@x.Soyad</td>
+            <td>@x.DogumTarihi</td>
+            <td>@x.DogumYeri</td>
+            <td>@x.Adres</td>
+            <td>@x.Telefon</td>
+            <td>@x.OgrenimDurumu</td>
+            <td>@x.Departman.DepartmanAd</td>
+            <td><a href="/departments/DeleteDepartment/@x.PersonelId" class="btn btn-danger">Sil</a></td>
+            <td><a href="/departments/GetDepartment/@x.PersonelId" class="btn btn-success">Güncelle</a></td>
+
+        </tr>
+    }
+</table>
+<a href="/Employee/NewEmployee/" class="btn btn-primary">Yeni peresonel</a>
+

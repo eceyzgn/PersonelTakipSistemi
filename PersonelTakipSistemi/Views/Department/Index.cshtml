@@ -1,0 +1,31 @@
+﻿@using PersonelTakipSistemi.Models;
+@model List<Department>;
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_TestLayout.cshtml";
+}
+
+<br />
+<table class="table table-bordered">
+    <tr>
+        <th>Id</th>
+        <th>Departman Adı</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+        <th>Detaylar</th>
+    </tr>
+    @foreach (var x in Model)
+    {
+        <tr>
+            <td>@x.DepartmanId</td>
+            <td>@x.DepartmanAd</td>
+            <td><a href="/Department/DeleteDepartment/@x.DepartmanId" class="btn btn-danger">Sil</a></td>
+            <td><a href="/Department/GetDepartment/@x.DepartmanId" class="btn btn-success">Güncelle</a></td>
+            <td><a href="/Department/DepartmentDetail/@x.DepartmanId" class="btn btn-info" style="background-color:#dee61d">Detaylar</a></td>
+        </tr>
+    }
+</table>
+<a href="/Department/NewDepartment" class="btn btn-primary">Yeni departman</a>
+
+
+

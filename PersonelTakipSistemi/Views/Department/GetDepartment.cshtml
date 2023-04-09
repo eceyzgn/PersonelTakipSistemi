@@ -1,0 +1,17 @@
+﻿@model PersonelTakipSistemi.Models.Department
+@{
+    ViewData["Title"] = "GetDepartment";
+    Layout = "~/Views/Shared/_TestLayout.cshtml";
+}
+
+@using (Html.BeginForm("UpdateDepartment", "Department", FormMethod.Post))
+{
+    <b>Departman ID</b>
+    @Html.TextBoxFor(x => x.DepartmanId, new { @class = "form-control" })
+    <br />
+    <b>Departman Adı</b>
+    @Html.TextBoxFor(x => x.DepartmanAd, new { @class = "form-control" })
+    <br />
+    <button class="btn " style="background-color:#ebdede" ; color:"black"> Departman Güncelle</button>
+}
+

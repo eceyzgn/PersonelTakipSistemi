@@ -1,0 +1,42 @@
+﻿@using PersonelTakipSistemi.Models;
+@model List<Employee>;
+
+@{
+    ViewData["Title"] = "DepartmentDetail";
+    Layout = "~/Views/Shared/_TestLayout.cshtml";
+}
+
+<br />
+<h2>  @ViewBag.depAd Departmanına Ait Detaylar</h2>
+<br />
+
+<table class="table table-bordered">
+    <tr>
+        <th>Id</th>
+        <th>TC</th>
+        <th>Ad</th>
+        <th>Soyad</th>
+        <th>Doğum Tarihi</th>
+        <th>Doğum Yeri</th>
+        <th>Adres</th>
+        <th>Telefon</th>
+        <th>Öğrenim durumu</th>
+      
+     
+
+    </tr>
+    @foreach (var x in Model)
+    {
+        <tr>
+            <td>@x.PersonelId</td>
+            <td>@x.TC</td>
+            <td>@x.Ad</td>
+            <td>@x.Soyad</td>
+            <td>@x.DogumTarihi</td>
+            <td>@x.DogumYeri</td>
+            <td>@x.Adres</td>
+            <td>@x.Telefon</td>
+            <td>@x.OgrenimDurumu</td>
+        </tr>
+    }
+</table>
